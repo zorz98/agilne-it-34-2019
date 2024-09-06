@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "c4ee4f12-c7ff-4cb3-9ffa-9155589ce558",
+		"name": "Agilne",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37298718"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/{{usernameUser}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"{{usernameUser}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"email\": \"user2@gmail.com\",\r\n    \"password\": \"user2\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"email\": \"user2@gmail.com\",\r\n    \"password\": \"user2\",\r\n    \"role\": \"OWNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CurrencyConversions",
+			"item": [
+				{
+					"name": "GetConversion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/currency-conversion/from/EUR/to/RSD/quantity/100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"currency-conversion",
+								"from",
+								"EUR",
+								"to",
+								"RSD",
+								"quantity",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetConversionParams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/currency-conversion?from=EUR&to=RSD&quantity=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"currency-conversion"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "EUR"
+								},
+								{
+									"key": "to",
+									"value": "RSD"
+								},
+								{
+									"key": "quantity",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetConversionFeign",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/currency-conversion/feign?from=EUR&to=RSD&quantity=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"currency-conversion",
+								"feign"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "EUR"
+								},
+								{
+									"key": "to",
+									"value": "RSD"
+								},
+								{
+									"key": "quantity",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "{{passwordUser}}",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{usernameUser}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "CurrencyExchanges",
+			"item": [
+				{
+					"name": "GetExchange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/currency-exchange/from/EUR/to/RSD",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"currency-exchange",
+								"from",
+								"EUR",
+								"to",
+								"RSD"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BankAccounts",
+			"item": [
+				{
+					"name": "GetBankAccountCurrentUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{passwordUser}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{usernameUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bank-account/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bank-account",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBankAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"email\": \"user2@gmail.com\",\r\n    \"usdQuantity\": 100,\r\n    \"eurQuantity\": 50,\r\n    \"gbpQuantity\": 10,\r\n    \"chfQuantity\": 0,\r\n    \"rsdQuantity\": 100000,\r\n    \"rubQuantity\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bank-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBankAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bank-account/user2@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bank-account",
+								"user2@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBankAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"email\": \"user2@gmail.com\",\r\n    \"usdQuantity\": 100,\r\n    \"eurQuantity\": 50,\r\n    \"gbpQuantity\": 14310,\r\n    \"chfQuantity\": 99915,\r\n    \"rsdQuantity\": 4004310,\r\n    \"rubQuantity\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bank-account/user2@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bank-account",
+								"user2@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "{{passwordAdmin}}",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{usernameAdmin}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{passwordOwner}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{usernameOwner}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
